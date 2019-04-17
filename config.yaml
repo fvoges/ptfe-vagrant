@@ -1,0 +1,4 @@
+---
+domain: local
+ip_ptfe: 10.0.0.50
+ip_gitlab: 10.0.0.51
