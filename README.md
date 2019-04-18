@@ -41,6 +41,31 @@ This vagrant environment will provision two Ubuntu VirtualBox machines:
 
 ```
 
+- Step 5: Finish ptfe setup at http://ptfe.local:8800
+  - Login with unlock password
+  - Create admin account/password
+  - Create user token
+  - Rename /modules/variables.auto.tfvars.example -> /modules/variables.auto.tfvars. Set token
 
-- Finish ptfe setup at http://ptfe.local:8800
-- The gitlab server is available at http://gitlab.local
+- Step 6: Finish gitlab server setup at http://gitlab.local
+  - Set the root password
+  - Login
+  - Create a token (http://gitlab.local/profile/personal_access_tokens). Set token in variables.auto.tfvars
+
+- Step 7: Run Terraform
+```
+  cd ./modules
+  terraform init
+  terraform plan
+  terraform apply
+```
+
+If you get this error:
+ ```
+ Error: Error running plan: 1 error(s) occurred:
+
+* provider.tfe: Failed to request discovery document: Get https://ptfe.local/.well-known/terraform.json: x509: certificate signed by unknown authority
+````
+
+_Workaround_ The certificate at /etc/ptfe_server.crt on the ptfe box needs to be added to the Mac OS Keychain. Copy the cert from the vagrant box and File -> Import Items... to select the certificate.
+TODO: Figure out a way to automate this.
