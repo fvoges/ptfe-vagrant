@@ -42,7 +42,7 @@ This vagrant environment will provision two Ubuntu VirtualBox machines:
 ```
 
 - Step 5: Finish ptfe setup at http://ptfe.local:8800
-  - Login with unlock password
+  - Login with [unlock password](https://github.com/sshastri/ptfe-vagrant/blob/master/files/replicated.conf#L3) 
   - Create admin account/password
   - Create user token
   - Rename /modules/variables.auto.tfvars.example -> /modules/variables.auto.tfvars. Set token
