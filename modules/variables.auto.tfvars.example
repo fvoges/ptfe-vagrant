@@ -1,0 +1,8 @@
+# Uncomment and replace these with the actual tokens
+#token = "PTFE_TOKEN"
+#gitlab_oauth = "GITLAB_API_TOKEN"
+
+hostname = "ptfe.local"
+org_name = "HashiCorp"
+team_name = "IS"
+workspace_name = "Vagrant"
