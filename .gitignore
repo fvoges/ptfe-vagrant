@@ -10,3 +10,6 @@
 # Directories
 .terraform/
 .vagrant/
+files/ptfe_server.crt
+files/ptfe_server.key
+modules/variables.auto.tfvars
