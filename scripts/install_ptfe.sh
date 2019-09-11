@@ -9,8 +9,9 @@ apt-get install -y jq
 # Application Settings for PTFE
 jq --arg fqdn $fqdn '.hostname.value = $fqdn' /vagrant/files/ptfe_settings.json > /tmp/ptfe_settings.json
 
-# Create SSL Cert and Key
-openssl req -new -days 365 -nodes -x509 -subj "/C=US/ST=Oregon/L=Portland/O=Hashicorp/CN=$fqdn" -keyout "/etc/ptfe_server.key" -out "/etc/ptfe_server.crt"
+# Copy SSL cert and key
+cp /vagrant/files/ptfe_server.* /etc
+chmod 0600 /etc/ptfe_server.key
 
 # Copy over the license file
 cp /vagrant/files/license.rli /tmp/license.rli
