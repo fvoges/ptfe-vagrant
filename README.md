@@ -61,6 +61,12 @@ BYOL (Bring your own license) installation requires you have a `.rli` license fi
      - Login
      - Create a token (<http://gitlab.local/profile/personal_access_tokens>)
      - Set token in `./modules/variables.auto.tfvars`
+     - Enable outbound requests to pTFE [in the Admin Area](http://gitlab.local/admin/application_settings/network#js-outbound-settings) ([see why this is needed](https://docs.gitlab.com/ee/security/webhooks.html))
+        1. Go to Admin Area -> Settings -> Network
+        2. Expand Outbound requests
+        3. Select the "Allow requests to the local network from system hooks" checkbox
+        4. Add the pTFE hostname to the "Whitelist to allow requests to the local network from hooks and services" text box
+        5. Save changes
 8. Run Terraform
 
    ```shell
