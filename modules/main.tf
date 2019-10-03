@@ -28,5 +28,5 @@ resource "tfe_oauth_client" "gitlab" {
   api_url          = "http://gitlab.local/api/v4"
   http_url         = "https://gitlab.local"
   oauth_token      = "${var.gitlab_oauth}"
-  service_provider = "gitlab_enterprise_edition"
+  service_provider = "gitlab_community_edition"
 }

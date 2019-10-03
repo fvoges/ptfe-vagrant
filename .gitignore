@@ -10,3 +10,10 @@
 # Directories
 .terraform/
 .vagrant/
+
+# certs
+files/ptfe_server.crt
+files/ptfe_server.key
+
+# this contains auth tokens
+modules/variables.auto.tfvars
